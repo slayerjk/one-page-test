@@ -14,6 +14,7 @@
 }
 
 .quest__form-section {
+  padding-bottom: 72px;
   text-align: center;
   outline: 1px solid red;
 }
@@ -36,17 +37,116 @@
 }
 
 .quest__input {
+  @include placeholder {
+    text-align: center;
+    color: $color-light-grey;
+  }
+  padding: {
+    left: 5%;
+    right: 5%;
+  }
+  font: 2.399em $font-roboto;//23.99
+  color: $color-dark-grey;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
   &--personal {
-    width: 515px;
+    width: 57%;//442px;
     margin-bottom: 25px;
     padding: {
       top: 15px;
       bottom: 15px;
     }
-    border: 1px solid #d9d9d9;
-    border-radius: 5px;
-    &:last-of-type {
-      margin-bottom: 0;
-    }
   }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  &--year-select {
+    width: 41.5%;//241px;
+    padding-left: 11%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    color: $color-light-grey;
+    background: url("../../img/tick-select.svg") no-repeat 95% center;
+    outline: none;
+  }
+  &--w-margin {
+    margin-top: 23px;
+  }
+}
+
+.quest__form-section--experience {
+  padding-bottom: 130px;
+}
+
+.quest__form-section-title--experience {
+  margin-bottom: 44px;
+}
+
+.quest__checkboxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.quest__input-block {
+  width: 27%;//210px;
+  text-align: left;
+  outline: 1px solid red;
+}
+
+.quest__input--experience {
+  display: none;
+}
+
+.quest__label {
+  position: relative;
+  padding-left: 14.5%;//30
+  font: 1.599em/2.1876172608em  $font-roboto-light;//15.99/34.98
+  color: #000;
+  &::before {
+    @include pseudo;
+    top: 0;
+    left: -1.5%;
+    width: 21px;
+    height: 21px;
+    background: url("../../img/checkbox.svg") no-repeat center;
+  }
+}
+
+.quest__input[id="methodology"]:checked ~ .quest__label[for="methodology"]::before,
+.quest__input[id="semantic"]:checked ~ .quest__label[for="semantic"]::before,
+.quest__input[id="webpack"]:checked ~ .quest__label[for="webpack"]::before,
+.quest__input[id="preprocessor"]:checked ~ .quest__label[for="preprocessor"]::before,
+.quest__input[id="js"]:checked ~ .quest__label[for="js"]::before,
+.quest__input[id="jquery"]:checked ~ .quest__label[for="jquery"]::before,
+.quest__input[id="svg"]:checked ~ .quest__label[for="svg"]::before,
+.quest__input[id="automat"]:checked ~ .quest__label[for="automat"]::before,
+.quest__input[id="git"]:checked ~ .quest__label[for="git"]::before {
+  background: url("../../img/checkbox--active.svg") no-repeat center;
+}
+
+.quest__input[id="methodology"]:checked ~ .quest__label[for="methodology"]::after,
+.quest__input[id="semantic"]:checked ~ .quest__label[for="semantic"]::after,
+.quest__input[id="webpack"]:checked ~ .quest__label[for="webpack"]::after,
+.quest__input[id="preprocessor"]:checked ~ .quest__label[for="preprocessor"]::after,
+.quest__input[id="js"]:checked ~ .quest__label[for="js"]::after,
+.quest__input[id="jquery"]:checked ~ .quest__label[for="jquery"]::after,
+.quest__input[id="svg"]:checked ~ .quest__label[for="svg"]::after,
+.quest__input[id="automat"]:checked ~ .quest__label[for="automat"]::after,
+.quest__input[id="git"]:checked ~ .quest__label[for="git"]::after,{
+  @include pseudo;
+  top: 50%;
+  left: 1%;
+  width: 13px;
+  height: 8px;
+  background: url("../../img/tick-select.svg") no-repeat center;
+  transform: translateY(-50%);
+}
+
+.quest__form-section-desc {
+  font: 1.599em/2.399em $font-roboto-light;//15.99/23.99
+  color: $color-dark-grey;
 }
