@@ -1,0 +1,13 @@
+//Interpolation use ex.: @media #{$retina}
+$retina: "(min-resolution: 144dpi), (min-resolution: 1.5dppx)";
+$desktop: "only screen and (min-width: 1200px)";
+$tablet: "only screen and (min-width: 768px)";
+
+//$font: "", Arial, sans-serif;
+$font-roboto-light: "Roboto Light", Arial, sans-serif;
+$font-roboto-thin: "Roboto Thin", Arial, sans-serif;
+
+//colors
+$color-dark-grey: #1c1c1c;
+$color-light-grey: #c8c8c8;
+$color-blue: #435993;

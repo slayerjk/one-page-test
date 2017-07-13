@@ -1,0 +1,79 @@
+html {
+  //font-size: 0.625em;//for REM usage
+}
+
+* {
+  margin: 0;
+  padding: 0; }
+
+a {
+  display: block;
+  text-decoration: none;
+  color: #000000; }
+
+body {
+  min-width: 320px;
+  font-size: 0.625em;
+}
+
+audio,
+img,
+svg,
+video,
+ {
+  max-width: 100%;
+  height: auto
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none; }
+
+.container {
+  width: 100%;
+  /*max-width: ;*/
+  margin: 0 auto; }
+
+/*
+*::-webkit-input-placeholder,
+*:-moz-placeholder,
+*::-moz-placeholder,
+*:-ms-input-placeholder {
+
+}
+
+// Media-queries-desktops/tablets
+//Large Devices, Wide Screens
+@media only screen and (max-width : 1200px) {
+
+}
+
+// Medium Devices, Desktops
+@media only screen and (max-width : 992px) {
+
+}
+
+// Small Devices, Tablets
+@media only screen and (max-width : 768px) {
+
+}
+
+// Media-queries-desktops/smartphones
+// Extra Small Devices, Phones
+@media only screen and (max-width : 480px) {
+
+}
+
+// Custom, iPhone Retina
+@media only screen and (max-width : 320px) {
+
+}
+*/

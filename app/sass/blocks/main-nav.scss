@@ -1,0 +1,24 @@
+.main-nav {
+  outline: 1px solid red;
+}
+
+.main-nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: {
+    top: 32px;
+    bottom: 30px;
+    left: 17.4%;//134px;
+    right: 17.4%;//134px;
+  }
+}
+
+.main-nav__link {
+  font: 1.4em $font-roboto-light;
+  color: $color-blue;
+  &--active {
+    color: $color-dark-grey;
+  }
+}
