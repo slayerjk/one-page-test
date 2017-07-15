@@ -3,7 +3,6 @@
     top: 66px;
     bottom: 70px;
   }
-  outline: 1px solid red;
 }
 
 .quest__title {
@@ -16,7 +15,6 @@
 .quest__form-section {
   padding-bottom: 72px;
   text-align: center;
-  outline: 1px solid red;
 }
 
 .quest__form-icon {
@@ -68,8 +66,8 @@
     -moz-appearance: none;
     -ms-appearance: none;
     appearance: none;
-    color: $color-light-grey;
-    background: url("../../img/tick-select.svg") no-repeat 95% center;
+    color: $color-dark-grey;
+    background: url("../img/tick-select.svg") no-repeat 95% center;
     outline: none;
   }
   &--w-margin {
@@ -95,7 +93,6 @@
 .quest__input-block {
   width: 27%; //210px;
   text-align: left;
-  outline: 1px solid red;
 }
 
 .quest__input--experience {
@@ -104,52 +101,57 @@
 
 .quest__label {
   position: relative;
-  padding-left: 14.5%; //30
+  padding-left: 30px; //30
   font: 1.599em/2.1876172608em $font-roboto-light; //15.99/34.98
   color: #000;
   &::before {
     @include pseudo;
-    top: 0;
-    left: -1.5%;
+    top: 50%;
+    left: -2px;
     width: 21px;
     height: 21px;
-    background: url("../../img/checkbox.svg") no-repeat center;
+    background: url("../img/checkbox.svg") no-repeat center;
+    transform: translate(0, -50%);
   }
 }
 
-.quest__input[id="methodology"]:checked~.quest__label[for="methodology"]::before,
-.quest__input[id="semantic"]:checked~.quest__label[for="semantic"]::before,
-.quest__input[id="webpack"]:checked~.quest__label[for="webpack"]::before,
-.quest__input[id="preprocessor"]:checked~.quest__label[for="preprocessor"]::before,
-.quest__input[id="js"]:checked~.quest__label[for="js"]::before,
-.quest__input[id="jquery"]:checked~.quest__label[for="jquery"]::before,
-.quest__input[id="svg"]:checked~.quest__label[for="svg"]::before,
-.quest__input[id="automat"]:checked~.quest__label[for="automat"]::before,
-.quest__input[id="git"]:checked~.quest__label[for="git"]::before {
+.quest__input[id="methodology"]:checked ~ .quest__label[for="methodology"]::before,
+.quest__input[id="semantic"]:checked ~ .quest__label[for="semantic"]::before,
+.quest__input[id="webpack"]:checked ~ .quest__label[for="webpack"]::before,
+.quest__input[id="preprocessor"]:checked ~ .quest__label[for="preprocessor"]::before,
+.quest__input[id="js"]:checked ~ .quest__label[for="js"]::before,
+.quest__input[id="jquery"]:checked ~ .quest__label[for="jquery"]::before,
+.quest__input[id="svg"]:checked ~ .quest__label[for="svg"]::before,
+.quest__input[id="automat"]:checked ~ .quest__label[for="automat"]::before,
+.quest__input[id="git"]:checked ~ .quest__label[for="git"]::before {
   background: url("../../img/checkbox--active.svg") no-repeat center;
 }
 
-.quest__input[id="methodology"]:checked~.quest__label[for="methodology"]::after,
-.quest__input[id="semantic"]:checked~.quest__label[for="semantic"]::after,
-.quest__input[id="webpack"]:checked~.quest__label[for="webpack"]::after,
-.quest__input[id="preprocessor"]:checked~.quest__label[for="preprocessor"]::after,
-.quest__input[id="js"]:checked~.quest__label[for="js"]::after,
-.quest__input[id="jquery"]:checked~.quest__label[for="jquery"]::after,
-.quest__input[id="svg"]:checked~.quest__label[for="svg"]::after,
-.quest__input[id="automat"]:checked~.quest__label[for="automat"]::after,
-.quest__input[id="git"]:checked~.quest__label[for="git"]::after,
+.quest__input[id="methodology"]:checked ~ .quest__label[for="methodology"]::after,
+.quest__input[id="semantic"]:checked ~ .quest__label[for="semantic"]::after,
+.quest__input[id="webpack"]:checked ~ .quest__label[for="webpack"]::after,
+.quest__input[id="preprocessor"]:checked ~ .quest__label[for="preprocessor"]::after,
+.quest__input[id="js"]:checked ~ .quest__label[for="js"]::after,
+.quest__input[id="jquery"]:checked ~ .quest__label[for="jquery"]::after,
+.quest__input[id="svg"]:checked ~ .quest__label[for="svg"]::after,
+.quest__input[id="automat"]:checked ~ .quest__label[for="automat"]::after,
+.quest__input[id="git"]:checked ~ .quest__label[for="git"]::after,
 {
   @include pseudo;
   top: 50%;
   left: 1%;
   width: 13px;
   height: 8px;
-  background: url("../../img/tick-select.svg") no-repeat center;
+  background: url("../img/tick-checkbox.svg") no-repeat center;
   transform: translateY(-50%);
 }
 
-.quest__form-section-title--js {
-  margin-bottom: 63px;
+.quest__form-section--js-skills {
+  padding-bottom: 104px;
+}
+
+.quest__form-section-title--js-skills {
+  margin-bottom: 45px;
 }
 
 .quest__form-section--about-me {
@@ -176,7 +178,7 @@
     text-align: left;
     color: #c8c8c8;
   }
-  width: 93%;//475px;
+  width: 93%; //475px;
   height: 160px;
   padding: {
     top: 17px;
@@ -193,7 +195,7 @@
 }
 
 .quest__input--submit {
-  width: 15%; //113
+  width: 115px; //113
   padding: 0;
   padding: {
     top: 15px;
@@ -203,4 +205,65 @@
   text-align: center;
   color: #fff;
   border-radius: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .quest {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .quest__title {
+    margin-bottom: 20px;
+  }
+
+  .quest__form-section {
+    padding-bottom: 22px;
+  }
+
+  .quest__form-section-title {
+    margin-bottom: 28px;
+  }
+
+  .quest__input {
+    font: 1.6em $font-roboto; //23.99
+  }
+  .quest__input--personal {
+    width: 80%;
+  }
+  
+  .quest__input--year-select {
+    width: 90%;
+    padding-left: 5%;
+  }
+  
+  .quest__checkboxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quest__label {
+    display: block;
+    width: 170px;
+    margin-bottom: 10px;
+  }
+
+  .quest__form-section--about-me {
+    padding: {
+      bottom: 38px;
+      left: 0; //131px;
+      right: 0; //130px;
+    }
+  }
+
+  .quest__input--about-me {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .quest__checkboxes {
+    align-items: flex-start;
+    padding-left: 10%;
+  }
 }

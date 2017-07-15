@@ -10,26 +10,69 @@
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
+  margin-bottom: 12px;
 }
 
 .slider__switch {
+  position: relative;
   font: 1.299em/1.4618937644em $font-roboto-light; //12.99/18.99
   text-align: left;
   color: #2e211c;
   cursor: pointer;
-  outline: 1px solid red;
+  &::before {
+    @include pseudo;
+    top: 38px;
+    width: 1px;
+    border-left: 1px dotted grey;
+  }
+  &::after {
+    @include pseudo;
+    width: 1px;
+    background-color: #fff;
+    z-index: 1;
+  }
   &--no-skill {
     width: 70px;//28.5%;
+    margin-right: 15%;
+    padding-top: 19px;
+    &::before {
+      left: 0;
+      height: 20px;
+    }
   }
   &--ready {
     width: 125px;//31%;
+    margin-right: 9.5%;
+    &::before {
+      left: 0;
+      height: 18px;
+    }
+    &::after {
+      top: 58px;
+      left: 0;
+      height: 7px; 
+    }
   }
   &--ready-fix {
     width: 180px;//30%;
+    &::before {
+      left: 0;
+      height: 15px;
+    }
+    &::after {
+      top: 53px;
+      left: 0;
+      height: 12px; 
+    }
   }
   &--form-scratch {
     width: 151px;
     margin-left: auto;
+    padding-top: 19px;
+    &::before {
+      right: 0;
+      height: 10px;
+    }
   }
 }
 
@@ -37,49 +80,84 @@
   position: relative;
   width: 100%;
   height: 14px;
-  //background: linear-gradient(to right, #fff, #8885c2);
-  outline: 1px solid red;
   &::after {
     display: none;
     @include pseudo;
     bottom: -28px;
     width: 23px;
     height: 26px;
-    background: url("../../img/slider-switch.svg") no-repeat center;
+    background: url("../img/slider-switch.svg") no-repeat center;
   }
 }
 
-.slider__input[id="slider-r1"]:checked~.slider__scale:after {
+.slider__input[id="js-no-skills"]:checked~.slider__scale:after {
   display: block;
   left: -1.5%;
 }
 
-.slider__input[id="slider-r2"]:checked ~ .slider__scale .slider__scale-img {
-  //background: linear-gradient(to right, #fff 0%, #8885c2 25%, #e8e8e8 25%);
+.slider__input[id="js-ready-solutions"]:checked ~ .slider__scale .slider__scale-img {
   fill: url(#gradient-25);
 }
 
-.slider__input[id="slider-r2"]:checked ~ .slider__scale:after {
+.slider__input[id="js-ready-solutions"]:checked ~ .slider__scale:after {
   display: block;
-  left: 23.5%;
+  left: 22.5%;
 }
 
-.slider__input[id="slider-r3"]:checked ~ .slider__scale .slider__scale-img {
-  //background: linear-gradient(to right, #fff 0%, #8885c2 51%, #e8e8e8 51%);
+.slider__input[id="js-ready-fix-solutions"]:checked ~ .slider__scale .slider__scale-img {
   fill: url(#gradient-50);
 }
 
-.slider__input[id="slider-r3"]:checked ~ .slider__scale:after {
+.slider__input[id="js-ready-fix-solutions"]:checked ~ .slider__scale:after {
   display: block;
-  left: 49.5%;
+  left: 48.5%;
 }
 
-.slider__input[id="slider-r4"]:checked ~ .slider__scale .slider__scale-img {
-  //background: linear-gradient(to right, #fff, #8885c2);
+.slider__input[id="js-hardcore"]:checked ~ .slider__scale .slider__scale-img {
   fill: url(#gradient-100);
 }
 
-.slider__input[id="slider-r4"]:checked~.slider__scale:after {
+.slider__input[id="js-hardcore"]:checked~.slider__scale:after {
   display: block;
   left: 98.5%;
+}
+
+@media only screen and (max-width: 767px) {
+  .slider__switches {
+    flex-direction: column;
+    padding-left: 10%;
+  }
+  
+  .slider__switch {
+    width: auto;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    padding-left: 30px;
+    &::before {
+      top: 0px;
+      left: 0px;
+      width: 14px;
+      height: 14px;
+      border: 2px solid #435993;
+      border-radius: 50%;
+    }
+  }
+  
+  .slider__input[id="js-no-skills"]:checked ~ .slider__switches .slider__switch[for="js-no-skills"]::after,
+  .slider__input[id="js-ready-solutions"]:checked ~ .slider__switches .slider__switch[for="js-ready-solutions"]::after, 
+  .slider__input[id="js-ready-fix-solutions"]:checked ~ .slider__switches > .slider__switch[for="js-ready-fix-solutions"]::after, 
+  .slider__input[id="js-hardcore"]:checked ~ .slider__switches .slider__switch[for="js-hardcore"]::after {
+    top: 9px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    background-color: #435993;
+    border-radius: 50%;
+    transform: translate(0, -50%);
+  }
+  
+  .slider__scale {
+    display: none;
+  }
 }

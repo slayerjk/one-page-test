@@ -1,5 +1,10 @@
 .main-nav {
-  outline: 1px solid red;
+  position: relative;
+}
+
+.main-nav__menu-toggle {
+  display: none;
+  cursor: pointer;
 }
 
 .main-nav__list {
@@ -20,5 +25,39 @@
   color: $color-blue;
   &--active {
     color: $color-dark-grey;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .main-nav__menu-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 25px;
+    background: url("../img/icons/icon-menu-burger.svg") no-repeat center;
+  }
+  
+  .main-nav__menu-toggle--close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("../../img/icons/icon-menu-cross.svg") no-repeat center;
+  }
+  
+  .main-nav__list {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+  
+  .main-nav__item {
+    width: 100%;
+  }
+  .main-nav__link {
+    margin-bottom: 5px;
+    text-align: center;
   }
 }
