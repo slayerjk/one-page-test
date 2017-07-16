@@ -13,6 +13,7 @@ $(document).ready(function () {
     }
   };
   /*-------------------------------------------------------*/
+  /*Mobile menu behaviour*/
   $(window).resize(function () {
     var w = $(window).width();
     if (w < 768) {
@@ -30,25 +31,11 @@ $(document).ready(function () {
     }
   });
 
-  $('.main-nav__menu-toggle').on('click', function () {
+  $('.main-nav__menu-toggle').on('click', function (event) {
     event.preventDefault();
-    
+
     $('.main-nav__menu-toggle').toggleClass('main-nav__menu-toggle--close');
     $('.main-nav__list').slideToggle('slow');
   });
 
 });
-
-/*_____etc hints_____*/
-/*jQuery Datepicker(datepicker-ru.js - is needed from jQueryUI i18n dir)*/
-/*
-  $.datepicker.setDefaults($.datepicker.regional[""]);
-  $.datepicker.setDefaults($.datepicker.regional["ru"]);
-
-  $(function () {
-    $('.input_dater').datepicker({
-      dateFormat: 'dd MM yy',
-      minDate: new Date()
-    });
-  });
-*/

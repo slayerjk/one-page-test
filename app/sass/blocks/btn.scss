@@ -7,12 +7,8 @@
   color: #fff;
   background-color: $color-blue;
   cursor: pointer;
-  &:hover {
-    
-  }
-  &:active {
-    
-  }
+  &:hover {}
+  &:active {}
   &:disabled,
   &--disabled {
     color: #fff;

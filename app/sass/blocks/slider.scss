@@ -18,7 +18,14 @@
   font: 1.299em/1.4618937644em $font-roboto-light; //12.99/18.99
   text-align: left;
   color: #2e211c;
+  opacity: 0.8;
   cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+  &:active {
+    opacity: 0.3;
+  }
   &::before {
     @include pseudo;
     top: 38px;
@@ -32,7 +39,7 @@
     z-index: 1;
   }
   &--no-skill {
-    width: 70px;//28.5%;
+    width: 70px; //28.5%;
     margin-right: 15%;
     padding-top: 19px;
     &::before {
@@ -41,7 +48,7 @@
     }
   }
   &--ready {
-    width: 125px;//31%;
+    width: 125px; //31%;
     margin-right: 9.5%;
     &::before {
       left: 0;
@@ -50,11 +57,11 @@
     &::after {
       top: 58px;
       left: 0;
-      height: 7px; 
+      height: 7px;
     }
   }
   &--ready-fix {
-    width: 180px;//30%;
+    width: 180px; //30%;
     &::before {
       left: 0;
       height: 15px;
@@ -62,7 +69,7 @@
     &::after {
       top: 53px;
       left: 0;
-      height: 12px; 
+      height: 12px;
     }
   }
   &--form-scratch {
@@ -87,6 +94,7 @@
     width: 23px;
     height: 26px;
     background: url("../img/slider-switch.svg") no-repeat center;
+    transition: all 0.3s linear;
   }
 }
 
@@ -95,25 +103,25 @@
   left: -1.5%;
 }
 
-.slider__input[id="js-ready-solutions"]:checked ~ .slider__scale .slider__scale-img {
+.slider__input[id="js-ready-solutions"]:checked~.slider__scale .slider__scale-img {
   fill: url(#gradient-25);
 }
 
-.slider__input[id="js-ready-solutions"]:checked ~ .slider__scale:after {
+.slider__input[id="js-ready-solutions"]:checked~.slider__scale:after {
   display: block;
   left: 22.5%;
 }
 
-.slider__input[id="js-ready-fix-solutions"]:checked ~ .slider__scale .slider__scale-img {
+.slider__input[id="js-ready-fix-solutions"]:checked~.slider__scale .slider__scale-img {
   fill: url(#gradient-50);
 }
 
-.slider__input[id="js-ready-fix-solutions"]:checked ~ .slider__scale:after {
+.slider__input[id="js-ready-fix-solutions"]:checked~.slider__scale:after {
   display: block;
   left: 48.5%;
 }
 
-.slider__input[id="js-hardcore"]:checked ~ .slider__scale .slider__scale-img {
+.slider__input[id="js-hardcore"]:checked~.slider__scale .slider__scale-img {
   fill: url(#gradient-100);
 }
 
@@ -127,13 +135,13 @@
     flex-direction: column;
     padding-left: 10%;
   }
-  
   .slider__switch {
     width: auto;
     margin: 0;
     margin-bottom: 10px;
     padding: 0;
     padding-left: 30px;
+    opacity: 0.7;
     &::before {
       top: 0px;
       left: 0px;
@@ -142,12 +150,17 @@
       border: 2px solid #435993;
       border-radius: 50%;
     }
+    &:hover {
+      opacity: 1;
+    }
+    &:active {
+      opacity: 0.3;
+    }
   }
-  
-  .slider__input[id="js-no-skills"]:checked ~ .slider__switches .slider__switch[for="js-no-skills"]::after,
-  .slider__input[id="js-ready-solutions"]:checked ~ .slider__switches .slider__switch[for="js-ready-solutions"]::after, 
-  .slider__input[id="js-ready-fix-solutions"]:checked ~ .slider__switches > .slider__switch[for="js-ready-fix-solutions"]::after, 
-  .slider__input[id="js-hardcore"]:checked ~ .slider__switches .slider__switch[for="js-hardcore"]::after {
+  .slider__input[id="js-no-skills"]:checked~.slider__switches .slider__switch[for="js-no-skills"]::after,
+  .slider__input[id="js-ready-solutions"]:checked~.slider__switches .slider__switch[for="js-ready-solutions"]::after,
+  .slider__input[id="js-ready-fix-solutions"]:checked~.slider__switches>.slider__switch[for="js-ready-fix-solutions"]::after,
+  .slider__input[id="js-hardcore"]:checked~.slider__switches .slider__switch[for="js-hardcore"]::after {
     top: 9px;
     left: 4px;
     width: 10px;
@@ -156,7 +169,6 @@
     border-radius: 50%;
     transform: translate(0, -50%);
   }
-  
   .slider__scale {
     display: none;
   }

@@ -7,7 +7,7 @@
 
 .quest__title {
   margin-bottom: 60px;
-  font: 6.896em $font-roboto-thin; //68.96
+  font: 6.896em $font-roboto-thin;
   text-align: center;
   color: $color-dark-grey;
 }
@@ -23,7 +23,7 @@
 
 .quest__form-section-title {
   margin-bottom: 48px;
-  font: 2.998em $font-roboto-light; //29.98
+  font: 2.998em $font-roboto-light;
   color: $color-dark-grey;
 }
 
@@ -43,13 +43,14 @@
     left: 5%;
     right: 5%;
   }
-  font: 2.399em $font-roboto; //23.99
+  font: 2.399em $font-roboto;
   color: $color-dark-grey;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   outline: none;
   &--personal {
-    width: 57%; //442px;
+    position: relative;
+    width: 57%;
     margin-bottom: 25px;
     padding: {
       top: 15px;
@@ -60,7 +61,7 @@
     margin-bottom: 0;
   }
   &--year-select {
-    width: 41.5%; //241px;
+    width: 41.5%;
     padding-left: 11%;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -73,6 +74,12 @@
   &--w-margin {
     margin-top: 23px;
   }
+}
+
+.quest__year-option {
+  text-align: center;
+  color: $color-blue;
+  outline: none;
 }
 
 .quest__form-section--experience {
@@ -91,7 +98,7 @@
 }
 
 .quest__input-block {
-  width: 27%; //210px;
+  width: 27%;
   text-align: left;
 }
 
@@ -101,8 +108,8 @@
 
 .quest__label {
   position: relative;
-  padding-left: 30px; //30
-  font: 1.599em/2.1876172608em $font-roboto-light; //15.99/34.98
+  padding-left: 30px;
+  font: 1.599em/2.1876172608em $font-roboto-light;
   color: #000;
   &::before {
     @include pseudo;
@@ -113,29 +120,32 @@
     background: url("../img/checkbox.svg") no-repeat center;
     transform: translate(0, -50%);
   }
+  &:hover::before {
+    background: url("../img/checkbox-hover.svg") no-repeat center;
+  }
 }
 
-.quest__input[id="methodology"]:checked ~ .quest__label[for="methodology"]::before,
-.quest__input[id="semantic"]:checked ~ .quest__label[for="semantic"]::before,
-.quest__input[id="webpack"]:checked ~ .quest__label[for="webpack"]::before,
-.quest__input[id="preprocessor"]:checked ~ .quest__label[for="preprocessor"]::before,
-.quest__input[id="js"]:checked ~ .quest__label[for="js"]::before,
-.quest__input[id="jquery"]:checked ~ .quest__label[for="jquery"]::before,
-.quest__input[id="svg"]:checked ~ .quest__label[for="svg"]::before,
-.quest__input[id="automat"]:checked ~ .quest__label[for="automat"]::before,
-.quest__input[id="git"]:checked ~ .quest__label[for="git"]::before {
-  background: url("../../img/checkbox--active.svg") no-repeat center;
+.quest__input[id="methodology"]:checked~.quest__label[for="methodology"]::before,
+.quest__input[id="semantic"]:checked~.quest__label[for="semantic"]::before,
+.quest__input[id="webpack"]:checked~.quest__label[for="webpack"]::before,
+.quest__input[id="preprocessor"]:checked~.quest__label[for="preprocessor"]::before,
+.quest__input[id="js"]:checked~.quest__label[for="js"]::before,
+.quest__input[id="jquery"]:checked~.quest__label[for="jquery"]::before,
+.quest__input[id="svg"]:checked~.quest__label[for="svg"]::before,
+.quest__input[id="automat"]:checked~.quest__label[for="automat"]::before,
+.quest__input[id="git"]:checked~.quest__label[for="git"]::before {
+  background: url("../img/checkbox--active.svg") no-repeat center;
 }
 
-.quest__input[id="methodology"]:checked ~ .quest__label[for="methodology"]::after,
-.quest__input[id="semantic"]:checked ~ .quest__label[for="semantic"]::after,
-.quest__input[id="webpack"]:checked ~ .quest__label[for="webpack"]::after,
-.quest__input[id="preprocessor"]:checked ~ .quest__label[for="preprocessor"]::after,
-.quest__input[id="js"]:checked ~ .quest__label[for="js"]::after,
-.quest__input[id="jquery"]:checked ~ .quest__label[for="jquery"]::after,
-.quest__input[id="svg"]:checked ~ .quest__label[for="svg"]::after,
-.quest__input[id="automat"]:checked ~ .quest__label[for="automat"]::after,
-.quest__input[id="git"]:checked ~ .quest__label[for="git"]::after,
+.quest__input[id="methodology"]:checked~.quest__label[for="methodology"]::after,
+.quest__input[id="semantic"]:checked~.quest__label[for="semantic"]::after,
+.quest__input[id="webpack"]:checked~.quest__label[for="webpack"]::after,
+.quest__input[id="preprocessor"]:checked~.quest__label[for="preprocessor"]::after,
+.quest__input[id="js"]:checked~.quest__label[for="js"]::after,
+.quest__input[id="jquery"]:checked~.quest__label[for="jquery"]::after,
+.quest__input[id="svg"]:checked~.quest__label[for="svg"]::after,
+.quest__input[id="automat"]:checked~.quest__label[for="automat"]::after,
+.quest__input[id="git"]:checked~.quest__label[for="git"]::after,
 {
   @include pseudo;
   top: 50%;
@@ -157,8 +167,8 @@
 .quest__form-section--about-me {
   padding: {
     bottom: 68px;
-    left: 17%; //131px;
-    right: 17%; //130px;
+    left: 17%;
+    right: 17%;
   }
 }
 
@@ -169,7 +179,7 @@
 .quest__form-section-desc {
   margin-bottom: 36px;
   padding-left: 0.5%;
-  font: 1.599em/1.6em $font-roboto-light; //15.99/23.99
+  font: 1.599em/1.6em $font-roboto-light;
   color: $color-dark-grey;
 }
 
@@ -178,13 +188,13 @@
     text-align: left;
     color: #c8c8c8;
   }
-  width: 93%; //475px;
+  width: 93%;
   height: 160px;
   padding: {
     top: 17px;
     left: 3%;
   }
-  font: 1.999em $font-roboto; //19.99
+  font: 1.999em $font-roboto;
 }
 
 .quest__form-section--submit {
@@ -195,13 +205,13 @@
 }
 
 .quest__input--submit {
-  width: 115px; //113
+  width: 115px;
   padding: 0;
   padding: {
     top: 15px;
     bottom: 16px;
   }
-  font: 1.599em $font-roboto-light; //15.99
+  font: 1.599em $font-roboto-light;
   text-align: center;
   color: #fff;
   border-radius: 10px;
@@ -212,50 +222,44 @@
     padding-top: 0px;
     padding-bottom: 0px;
   }
-
+  .quest__form-icon {
+    margin-bottom: 10px;
+  }
   .quest__title {
     margin-bottom: 20px;
   }
-
   .quest__form-section {
     padding-bottom: 22px;
   }
-
   .quest__form-section-title {
     margin-bottom: 28px;
   }
-
   .quest__input {
-    font: 1.6em $font-roboto; //23.99
+    font: 1.6em $font-roboto;
   }
   .quest__input--personal {
     width: 80%;
   }
-  
   .quest__input--year-select {
     width: 90%;
     padding-left: 5%;
   }
-  
   .quest__checkboxes {
     flex-direction: column;
     align-items: center;
   }
-
   .quest__label {
     display: block;
     width: 170px;
     margin-bottom: 10px;
   }
-
   .quest__form-section--about-me {
     padding: {
       bottom: 38px;
-      left: 0; //131px;
-      right: 0; //130px;
+      left: 0;
+      right: 0;
     }
   }
-
   .quest__input--about-me {
     width: 80%;
   }
