@@ -47,9 +47,6 @@ $(document).ready(function () {
     }
   });
   
-  $('.dropdown').next().show();
-      
-  
   $('.quest__input--personal').on('focus', function (e) {
     $(this).addClass('quest__input--js-filled-input');
     $(this).next().show();

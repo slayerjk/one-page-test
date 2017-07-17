@@ -78,33 +78,7 @@
 	opacity: 0;
 }
 
-/* SELECTED FEEDBACK ITEM */ 
 
-.dropdown .selected,
-.dropdown li{
-	display: block;
-	font-size: 18px;
-	line-height: 1;
-	color: #000;
-	padding: 9px 12px;
-	overflow: hidden;
-	white-space: nowrap;
-}
-
-.dropdown.disabled .selected{
-	color: #999;
-}
-
-.dropdown .selected::after{
-	content: '';
-	position: absolute;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	width: 60px;
-	border-radius: 0 2px 2px 0;
-	box-shadow: inset -55px 0 25px -20px #fff;
-}
 
 /* DROP DOWN WRAPPER */
 

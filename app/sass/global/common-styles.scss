@@ -46,11 +46,11 @@ ul {
 .dropdown {
   position: relative;
   width: 41.5%;
-  height: 39px;
+  height: auto;
   margin: 0 auto;
   padding: {
-    top: 12px;
-    bottom: 7px;
+    top: 15px;
+    bottom: 13px;
   }
   font: 2.399em $font-roboto;
   cursor: pointer;
@@ -73,7 +73,14 @@ ul {
 
 .dropdown .selected,
 .dropdown li {
-  font: 1em $font-roboto;
+  padding: 0;
+  padding-top: 5px;
+  font: 0.8em $font-roboto;
+  color: $color-blue;
+}
+
+.dropdown .selected {
+  color: $color-dark-grey;
 }
 
 .dropdown li.focus {
