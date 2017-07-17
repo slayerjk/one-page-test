@@ -10,6 +10,7 @@
 
   <title>One Page - Test</title>
 
+  <link href="libs/easydropdown.css" rel="stylesheet">
   <link href="css/style.min.css" rel="stylesheet">
 
   <link rel="icon" href="img/icons/favicon_32x32.ico">
@@ -46,7 +47,7 @@
       <form class="quesd__form" action="https://echo.htmlacademy.ru/" method="post">
         <h1 class="quest__title">Анкета</h1>
 
-        <div class="quest__form-section">
+        <div class="quest__form-section quest__form-section--personal">
           <svg class="quest__form-icon quest__form-icon--pesonal" xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 47 47">
           <defs>
             <style>
@@ -60,24 +61,40 @@
         </svg>
           <h2 id="personal" class="quest__form-section-title">Личная информация</h2>
           <div class="quest__inputs-block">
-            <input class="quest__input quest__input--personal" type="text" name="name" placeholder="ФИО" value="Марченко Максим Викторович">
-            <select class="quest__input quest__input--personal quest__input--year-select" name="birth_year">
-              <option class="quest__year-option quest__year-option__placeholder">Год рождения</option>
-              <option class="quest__year-option">1980</option>
-              <option class="quest__year-option">1981</option>
-              <option class="quest__year-option">1982</option>
-              <option class="quest__year-option"  selected>1983</option>
-              <option class="quest__year-option">1984</option>
-              <option class="quest__year-option">1985</option>
-              <option class="quest__year-option">1986</option>
-              <option class="quest__year-option">1987</option>
-              <option class="quest__year-option">1988</option>
-              <option class="quest__year-option">1989</option>
-              <option class="quest__year-option">1990</option>
-            </select>
-            <input class="quest__input quest__input--personal quest__input--w-margin" type="text" name="location" placeholder="Место проживания" value="Республика Казахстан г.Алматы">
-            <input class="quest__input quest__input--personal" type="text" name="Skype" placeholder="Skype" value="Slayer.jk13">
-            <input class="quest__input quest__input--personal" type="email" name="Email" placeholder="E-mail" value="slayer.jk@yandex.ru">
+
+            <div class="quest__input-wrapper">
+              <input id="user-name" class="quest__input quest__input--personal" type="text" name="name" placeholder="ФИО" value="Марченко Максим Викторович">
+              <label for="user-name" class="quest__input-in-title">ФИО</label>
+            </div>
+            <div class="quest__input-wrapper">
+              <select id="user-birth" class="quest__input quest__input--personal quest__input--year-select dropdown" name="birth_year" value="s">
+                <option class="quest__year-option">Год рождения</option>
+                <option class="quest__year-option">1980</option>
+                <option class="quest__year-option">1981</option>
+                <option class="quest__year-option">1982</option>
+                <option class="quest__year-option" selected>1983</option>
+                <option class="quest__year-option">1984</option>
+                <option class="quest__year-option">1985</option>
+                <option class="quest__year-option">1986</option>
+                <option class="quest__year-option">1987</option>
+                <option class="quest__year-option">1988</option>
+                <option class="quest__year-option">1989</option>
+                <option class="quest__year-option">1990</option>
+              </select>
+              <label for="user-birth" class="quest__input-in-title">Год рождения</label>
+            </div>
+            <div class="quest__input-wrapper quest__input-wrapper--w-margin-top">
+              <input id="user-live" class="quest__input quest__input--personal quest__input--w-margin" type="text" name="location" placeholder="Место проживания" value="Республика Казахстан г.Алматы">
+              <label for="user-live" class="quest__input-in-title">Место проживания</label>
+            </div>
+            <div class="quest__input-wrapper">
+              <input id="user-skype" class="quest__input quest__input--personal" type="text" name="Skype" placeholder="Skype" value="Slayer.jk13">
+              <label for="user-skype" class="quest__input-in-title">Skype</label>
+            </div>
+            <div class="quest__input-wrapper">
+              <input id="user-mail" class="quest__input quest__input--personal" type="email" name="Email" placeholder="E-mail" value="slayer.jk@yandex.ru">
+              <label for="user-mail" class="quest__input-in-title">E-mail</label>
+            </div>
           </div>
         </div>
 
@@ -212,7 +229,8 @@
 
   <!-- Scripts______________________________________ -->
   <script src="libs/jquery-3.2.1.min.js"></script>
-  
+  <script src="libs/jquery.easydropdown.min.js"></script>
+
   <script src="js/script.min.js"></script>
   <!--<script src="js/script.js"></script>-->
 

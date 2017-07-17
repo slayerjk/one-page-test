@@ -15,6 +15,9 @@
 .quest__form-section {
   padding-bottom: 72px;
   text-align: center;
+  &--personal {
+    padding-bottom: 75px;
+  }
 }
 
 .quest__form-icon {
@@ -34,55 +37,89 @@
   align-items: center;
 }
 
+.quest__input-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 26px;
+  text-align: center;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
 .quest__input {
   @include placeholder {
     text-align: center;
     color: $color-light-grey;
   }
-  padding: {
-    left: 5%;
-    right: 5%;
-  }
   font: 2.399em $font-roboto;
+  text-align: center;
   color: $color-dark-grey;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
+  box-sizing: border-box;
   outline: none;
   &--personal {
     position: relative;
-    width: 57%;
-    margin-bottom: 25px;
+    width: 67.2%;
+    height: 59px;
     padding: {
       top: 15px;
       bottom: 15px;
     }
   }
-  &:last-of-type {
-    margin-bottom: 0;
-  }
   &--year-select {
-    width: 41.5%;
-    padding-left: 11%;
+    width: 40.5%;
+    outline: 1px solid red;
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
     appearance: none;
+    text-align: center;
     color: $color-dark-grey;
     background: url("../img/tick-select.svg") no-repeat 95% center;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
     outline: none;
+    &:focus {
+      background: url("../img/tick-select-opened.svg") no-repeat 95% center;
+    }
   }
-  &--w-margin {
-    margin-top: 23px;
+  &:focus {
+    border-color: $color-blue;
+  }
+  &--js-filled-input {
+    padding: {
+      top: 20px;
+    }
+    font: 2em $font-roboto;
   }
 }
 
 .quest__year-option {
   text-align: center;
   color: $color-blue;
+  border: none;
   outline: none;
 }
 
+.quest__input-in-title {
+  display: none;
+  position: absolute;
+  top: 5px;
+  left: 0%;
+  width: 100%;
+  font: 1.4em $font-roboto;
+  text-align: center;
+  color: #adadad;
+}
+
+.quest__input:focus+.quest__input-in-title {
+  display: block;
+}
+
 .quest__form-section--experience {
+  width: auto;
   padding-bottom: 130px;
 }
 
@@ -173,11 +210,11 @@
 }
 
 .quest__form-section-title--about-me {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .quest__form-section-desc {
-  margin-bottom: 36px;
+  margin-bottom: 34px;
   padding-left: 0.5%;
   font: 1.599em/1.6em $font-roboto-light;
   color: $color-dark-grey;
@@ -188,13 +225,14 @@
     text-align: left;
     color: #c8c8c8;
   }
-  width: 93%;
-  height: 160px;
+  width: 101%;
+  height: 183px;
   padding: {
     top: 17px;
     left: 3%;
   }
   font: 1.999em $font-roboto;
+  text-align: left;
 }
 
 .quest__form-section--submit {
@@ -216,6 +254,9 @@
   color: #fff;
   border-radius: 10px;
 }
+
+
+/*Media Tablet and Mobile*/
 
 @media only screen and (max-width: 767px) {
   .quest {

@@ -38,4 +38,29 @@ $(document).ready(function () {
     $('.main-nav__list').slideToggle('slow');
   });
 
+  /*Input inner title*/
+  
+  $('.quest__input--personal').each(function () {
+    if ($(this).val()) {
+      $(this).addClass('quest__input--js-filled-input');
+      $(this).next().show();
+    }
+  });
+  
+  $('.dropdown').next().show();
+      
+  
+  $('.quest__input--personal').on('focus', function (e) {
+    $(this).addClass('quest__input--js-filled-input');
+    $(this).next().show();
+  });
+  
+  $('.quest__input--personal').on('focusout', function () {
+    if (!$(this).val()) {
+      $(this).next().hide();
+    } else {
+      $(this).next().show();
+    }
+  });
+  
 });
